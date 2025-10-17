@@ -1,0 +1,16 @@
+The files in this folder were created by Jeff Leinen (jeffleinen@google.com)
+
+Before attempting to execute the code, go to https://cloud.google.com/gemini/docs/conversational-analytics-api/enable-the-api
+an dlook at the APIs that nees to be activated and the IAM permissions that needs to be granted
+
+Before using the scripts, check each scripts and replace the project ID to your project ID
+
+The create_agent_n_cnvrstn.py is based on the thelook_ecommerce pubic dataset. Open the dataset and copy it to your project  
+
+Order of execution: 
+1. Run create_agent_n_cnvrstn.py (Python create_agent_n_cnvrstn.py <name of agent>
+2. Then you can...
+  2.1 List your active agents (list_data_agents.py)
+  2.2 Delete your active agents (delete_data_agent.py)
+  2.3 Use your agent (ask_data_agent.py)(python ask_data_agent.py <name of agent from step 1> "prompt"
+
