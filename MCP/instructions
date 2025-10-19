@@ -1,4 +1,4 @@
-The instructions in this file help with the creation of an agent who uses a bigquery related tool that was created in a dedicated MCP server
+ a The instructions in this file help with the creation of an agent who uses a bigquery related tool that was created in a dedicated MCP server
 
 Context: 
 1. MCP: Model Context Protocol or Multi-Cloud Platform
@@ -24,4 +24,15 @@ Context:
        managing the data context required by Large Language Models (LLMs).It could be designed to efficiently prepare and deliver the necessary 
        database information (context) to an AI model for tasks like Retrieval-Augmented Generation (RAG) or schema understanding.
 
-1. Step 1: 
+1. Step 1: create a folder names mcp-toolbox
+2. Step 2: Run the following commands in this folder. After you run this command the folder should have an executable with the name toolbox: 
+
+      export VERSION=0.7.0 #The latest version can be found here: https://github.com/googleapis/genai-toolbox?tab=readme-ov-file#installing-the-server
+      curl -O https://storage.googleapis.com/genai-toolbox/v$VERSION/linux/amd64/toolbox
+      chmod +x toolbox
+
+3. Step 3: Edit your tool.yaml file
+
+
+
+
