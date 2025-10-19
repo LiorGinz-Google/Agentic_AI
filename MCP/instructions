@@ -1,1 +1,27 @@
+The instructions in this file help with the creation of an agent who uses a bigquery related tool that was created in a dedicated MCP server
 
+Context: 
+1. MCP: Model Context Protocol or Multi-Cloud Platform
+2. Read about the Google genai_toolbox: https://github.com/googleapis/genai-toolbox - The MCP Toolbox for Databases is a command-line utility and 
+   server component developed primarily to simplify and manage database operations in complex or multi-cloud environments.It is an abstraction 
+   layer. Its main functions are as follows:
+
+    1. Unified Database Management (Abstraction)
+       The Toolbox aims to provide a single, consistent interface for managing common database tasks.
+       Standardized Operations: It standardizes commands for tasks like connection pooling, schema synchronization, and data migration, 
+       abstracting away the unique API calls required by different vendors (PostgreSQL, MySQL, Cloud Spanner, etc.).
+
+       Simplified Client Access: It can act as a lightweight server that client applications connect to, which then handles the specific 
+       database driver connections on their behalf.
+
+    2. Streamlined Data Migration and Deployment
+       The tool is often used to facilitate movement and deployment of database schema and data between environments, 
+       which is crucial in a multi-cloud or continuous integration/continuous delivery (CI/CD) pipeline.It helps developers ensure 
+       database changes are consistently applied across development, staging, and production environments.
+
+    3. Context Management (Potential Model Integration)
+       Given its likely connection to the Model Context Protocol (MCP), the toolbox may have specialized functions related to serving or 
+       managing the data context required by Large Language Models (LLMs).It could be designed to efficiently prepare and deliver the necessary 
+       database information (context) to an AI model for tasks like Retrieval-Augmented Generation (RAG) or schema understanding.
+
+1. Step 1: 
