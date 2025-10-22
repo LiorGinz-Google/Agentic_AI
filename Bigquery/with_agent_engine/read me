@@ -1,1 +1,25 @@
+*To deploy to agent engine: run python prompt.py from command line
+
+*The output should be similar to the below:
+
+Identified the following requirements: {'cloudpickle': '3.1.1', 'google-cloud-aiplatform': '1.121.0', 'pydantic': '2.12.3'}
+The following requirements are missing: {'cloudpickle', 'pydantic'}
+The following requirements are appended: {'pydantic==2.12.3', 'cloudpickle==3.1.1'}
+The final list of requirements: ['google-cloud-aiplatform[agent_engines,adk]>=1.88', 'google-adk', 'google-cloud-aiplatform', 'google-auth', 'google-cloud-storage', 'pydantic==2.12.3', 'cloudpickle==3.1.1']
+Using bucket agent_experiment_staging
+Wrote to gs://agent_experiment_staging/agent_engine/agent_engine.pkl
+Writing to gs://agent_experiment_staging/agent_engine/requirements.txt
+Creating in-memory tarfile of extra_packages
+Writing to gs://agent_experiment_staging/agent_engine/dependencies.tar.gz
+Bidi stream API mode is not supported yet in Vertex SDK, please use the GenAI SDK instead. Skipping method bidi_stream_query.
+Creating AgentEngine
+Create AgentEngine backing LRO: projects/333845934415/locations/us-central1/reasoningEngines/7628873468393553920/operations/3085251841110310912
+View progress and logs at https://console.cloud.google.com/logs/query?project=agent-test-470019
+AgentEngine created. Resource name: projects/333845934415/locations/us-central1/reasoningEngines/7628873468393553920
+To use this AgentEngine in another session:
+agent_engine = vertexai.agent_engines.get('projects/333845934415/locations/us-central1/reasoningEngines/7628873468393553920')
+
+Notes:
+  1. It should take a few minutes
+  2. You can navigate to agent engine in the console and see additional info' there
 
