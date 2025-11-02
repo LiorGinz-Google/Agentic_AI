@@ -65,5 +65,5 @@ curl -X POST \
 --projects/agent-test-470019/locations/us-central1/reasoningEngines/7628873468393553920: Go to Agent Engine in the console,
   select Service Configuration and use the name field from the Runrime tab
 
-
+You can also try the registerAS.py.txt script in this folder
 
