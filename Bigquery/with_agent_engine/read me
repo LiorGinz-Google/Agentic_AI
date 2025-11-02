@@ -23,3 +23,47 @@ Notes:
   1. It should take a few minutes
   2. You can navigate to agent engine in the console and see additional info' there
 
+in order to publish the agent to Gemini Enterprise do the following:
+1. Go to the console and navigate to Gemini Enterprise
+2. Go to Manage users
+3. Select Global and make sure that you have an active license under "Gemini Enterprise licenses"
+4. If you do not see an active license you either need to subscribe to one or If you use Argolis use the following:
+   Enable Gemini Enterprise in Argolis:
+   use go/argolis, select request preview features, choose Gemini Enterprise Free license
+   go/argolis-gemini-license
+5. Once the license is available make sure that your user has access (Steps #3 & #4 above)
+6. Create an App
+7. Get into the app' screen, copy the app' URL and open it in another browser tab
+8. Make sure that you have the option "+ Create Agent" in the app website. If not available look how to add Agent Designer. This
+   is one of the links that I've used: https://docs.google.com/forms/d/e/1FAIpQLScY7n4RmDHawnggJIKluIvEUHW8gYiUOjpN6bUaVJ1BRCQoCQ/viewform
+9. Go back to the console, open Cloud Shell, navigvate to the folder where your agent.py file is and run the following command. You need to 
+   make changes and adapt it to your project  
+
+curl -X POST \
+-H "Authorization: Bearer $(gcloud auth print-access-token)" \
+-H "Content-Type: application/json" \
+-H "X-Goog-User-Project: agent-test-470019" \
+"https://discoveryengine.googleapis.com/v1alpha/projects/333845934415/locations/global/collections/default_collection/engines/gemini-enterprise-17611484_1761148444457/assistants/default_assistant/agents" \
+-d '{
+"displayName": "BigQuery Search",
+"description": "Agent to answer questions about BigQuery data and models and execute SQL queries",
+"icon": {
+"uri": "https://storage.googleapis.com/agent_experiment_staging/bq_agent.jpeg"
+},
+"adk_agent_definition": {
+"tool_settings": {
+"tool_description": "A tool to interact with BigQuery"
+},
+"provisioned_reasoning_engine": {
+"reasoning_engine":
+"projects/agent-test-470019/locations/us-central1/reasoningEngines/7628873468393553920"
+}}}'
+
+--agent-test-470019: This is your GCP project ID
+--333845934415: This is your GCP project number
+--gemini-enterprise-17611484_1761148444457: Go to the Gemini Enterprise App screen and take the ID column for your app
+--projects/agent-test-470019/locations/us-central1/reasoningEngines/7628873468393553920: Go to Agent Engine in the console,
+  select Service Configuration and use the name field from the Runrime tab
+
+
+
