@@ -1,5 +1,7 @@
 #based on: https://cloud.google.com/blog/products/ai-machine-learning/build-multi-agentic-systems-using-google-adk?e=48754805
 #You can read more here: https://google.github.io/adk-docs/agents/
+#Limitation: it cannot orchestrate a multi-step workflow. It will address the first past of the prompt with an 
+#appropriate agent and then will stop
 
 from google.adk.agents import LlmAgent
 
